@@ -10,7 +10,8 @@ from datetime import datetime
 app = FastAPI()
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = './speaker_credentials.json'
 client = texttospeech.TextToSpeechClient()
-origins = ["http://localhost:5173"]
+
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
